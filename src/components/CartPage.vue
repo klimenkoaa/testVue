@@ -103,7 +103,8 @@ export default {
                     if (cart.products) {
                         cart.products.forEach((product) => {
                             product.finalTotal = (product.price * product.quantity * (1 - product.discountPercentage / 100).toFixed(2));
-                            product.discountPrice = (product.price * (1 - product.discountPercentage / 100).toFixed(2));
+                            product.discountPrice = (product.price * (1 - product.discountPercentage / 100)).toFixed(2);
+                            console.log(product.discountPrice);
 
                             total += product.finalTotal;
                             discount += product.price * product.quantity * product.discountPercentage / 100;
