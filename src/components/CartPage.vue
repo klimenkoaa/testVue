@@ -120,6 +120,7 @@ export default {
         deleteProduct(product, index){
             if(confirm(`Are you sure you want to delete ${product.title}?`)) {
                 this.carts.carts[0].products.splice(index, 1);
+                this.recalc();
             }
         },
     },
